@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+   "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+   <hibernate-mapping>
+  
+   <class name="br.ufc.si.farmacia.model.DispensaMedicamentoPaciente" table="dispensa_paciente">
+   
+   <id name="id" column="id_dispensa_paciente">
+   <generator class="identity"/>
+   </id>
+   
+   <property name="crm_medico" column="crm_medico"></property>
+   <property name="tipo_medicamento" column="tipo_medicamento"></property>
+   <property name="tipo_saida" column="tipo_saida"></property>
+   <property name="quant_saida" column="qtd_saida"></property>
+   <property name="data_dispensa" column="data_dispensa"></property>
+   <property name="data_retorno" column="data_retorno"></property>
+     
+   <many-to-one name="paciente" class="br.ufc.si.farmacia.model.Paciente"
+	column="paciente_id"/>
+   
+   <many-to-one name="medicamento" class="br.ufc.si.farmacia.model.Medicamento"
+	column="medicamento_id"/>
+
+   </class>
+   
+   
+   </hibernate-mapping>
