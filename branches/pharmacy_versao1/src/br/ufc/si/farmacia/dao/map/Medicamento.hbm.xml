@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+   "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+   <hibernate-mapping>
+   
+   <class name="br.ufc.si.farmacia.model.Medicamento" table="medicamento">
+		<id name="idMedicamento" column="id_medicamento">
+		     <generator class="identity"></generator>    
+		</id>
+		<property name="nomeMedicamento" column="nome_medicamento"/>
+		<property name="prateleiraMedicamento" column="prateleira_medicamento"/>
+		<property name="apresentacaoMedicamento" column="apresentacao_medicamento"/>
+		<property name="qtdUnidadesPorCaixa" column="qtd_unidades_por_caixa"/>
+		<property name="qtdCaixas" column="qtd_caixas"/>
+		<property name="totalUnidadesDisponiveis" column="total_unidades_disponiveis"/>
+		<property name="loteMedicamento" column="lote_medicamento"/>
+		<property name="validadeMedicamento" column="validade_medicamento"/>
+		<property name="notaFiscalMedicamento" column="nota_fiscal_medicamento"/>
+		<property name="tipoAtencaoMedicamento" column="tipo_atencao_medicamento"/>
+		<property name="tipoMedicamento" column="tipo_medicamento"/>
+		<property name="valorMedicamento" column="valor_medicamento"/>
+		<property name = "jaDispensado" column= "jadispensado"/>
+		
+	</class>
+   
+   </hibernate-mapping>

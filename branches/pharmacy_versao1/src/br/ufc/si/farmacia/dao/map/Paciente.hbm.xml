@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+   "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+   <hibernate-mapping>
+   <class name="br.ufc.si.farmacia.model.Paciente" table="paciente">
+   
+   <id name="id" column="id_paciente">
+   <generator class="identity"></generator>
+   </id>
+   
+   <property name="nome" column="nome_paciente"></property>
+   <property name="rg" column="rg_paciente"></property>
+   <property name="numero_cartao_sus" column="numero_cartao_sus"></property>
+   
+   </class>
+   
+   </hibernate-mapping>
