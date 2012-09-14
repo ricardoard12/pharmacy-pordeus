@@ -19,6 +19,7 @@ public class DispensaMedicamentoPacienteDAO implements
 		Session sessao = HibernateUtil.getSession();
 	  	Transaction trasaction = sessao.beginTransaction();
 
+	  	boolean teste = true;
 	  	
 	  	//fazendo um merge maravilhoso
 	  	
