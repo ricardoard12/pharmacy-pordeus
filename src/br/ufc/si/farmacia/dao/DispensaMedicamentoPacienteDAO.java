@@ -17,8 +17,11 @@ public class DispensaMedicamentoPacienteDAO implements
 			DispensaMedicamentoPaciente novaDispensacao) {
 
 		Session sessao = HibernateUtil.getSession();
-		Transaction trasaction = sessao.beginTransaction();
+	  	Transaction trasaction = sessao.beginTransaction();
 
+	  	
+	  	//fazendo um merge maravilhoso
+	  	
 		try {
 			sessao.save(novaDispensacao);
 			trasaction.commit();
