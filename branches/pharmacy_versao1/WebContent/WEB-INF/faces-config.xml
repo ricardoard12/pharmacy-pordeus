@@ -5,13 +5,57 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
     version="1.2">
+
+
+<application>
+		<resource-bundle>
+			<base-name>br.ufc.si.farmacia.mensagens.mensagens</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+</application>
+
     
     <navigation-rule>
 	<from-view-id>/Principal.jsp</from-view-id>
+
 	<navigation-case>
-	<from-outcome>remover</from-outcome>
-	<to-view-id>/removerRemedio.jsp</to-view-id>
+		<from-outcome>remover</from-outcome>
+		<to-view-id>/removerRemedio.jsp</to-view-id>
 	</navigation-case>
+
 	</navigation-rule>
 
+	<navigation-rule>
+	<from-view-id>/*</from-view-id>
+	
+	<navigation-case>
+		<from-outcome>imprimir</from-outcome>
+		<to-view-id>/confirmacao_cadastro.jsp</to-view-id>
+	</navigation-case>
+
+	<navigation-case>
+		<from-outcome>cancelar</from-outcome>
+		<to-view-id>/cadastrar_medicamento.jsp</to-view-id>
+	</navigation-case>
+
+	</navigation-rule>
+	
+	
+	<managed-bean>
+
+		<managed-bean-name>
+				MedicamentoBean
+		</managed-bean-name>
+		
+		<managed-bean-class>
+			br.ufc.si.farmacia.controller.MedicamentoBean
+		</managed-bean-class>
+
+		<managed-bean-scope>
+			session
+		</managed-bean-scope>
+
+	</managed-bean>
+	
+	
 </faces-config>
