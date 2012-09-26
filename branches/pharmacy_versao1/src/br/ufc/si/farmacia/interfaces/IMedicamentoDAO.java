@@ -14,12 +14,18 @@ public interface IMedicamentoDAO {
 	public Medicamento RemedioPorId(Integer id);
 
 	public List<Medicamento> ListarTodosRemedios();
-	
-	public List<Medicamento>ListarMedicamentosAindaEmEstoque();
-	
-	public List<Medicamento>ListarMedicamentosDispensados();
-	
+
+	public List<Medicamento> ListarMedicamentosAindaEmEstoque();
+
+	public List<Medicamento> ListarMedicamentosDispensados();
+
 	public List<Medicamento> ListarMedicamentosVencidos();
-	
+
 	public List<Medicamento> ListarMedicamentosQueVenceraoNoMes();
+
+	public List<Medicamento> BuscarMedicamentoPorNotaFiscal(String notaFiscal);
+
+	public List<Medicamento> BuscarMedicamentoPorNome(String nome);
+
+	public List<Medicamento> BuscarMedicamentoPorLote(String lote);
 }
