@@ -14,27 +14,28 @@
 
 		<div id="content">
 			<div id="top">
-			</div>			
+			<h:graphicImage value="/img/4.jpg" alt="logo" width="180" height="134" style="margin-left:100px;"></h:graphicImage>
+			</div>	
+					
 			<div id="middle">
 				<h:form styleClass="login">
-				<h:graphicImage  url="/img/logo.png" width="400px" height="60px;"></h:graphicImage>
 					<fieldset >
 						<h:panelGrid columns="2">
-							<h:outputText value="Login" />
-							<h:inputText  style="width:280px;"></h:inputText>
+							<h:outputLabel value="Login"/>
+							<h:inputText  style="width:280px;" value="#{UsuarioBean.login}" styleClass="campo"></h:inputText>
 
-							<h:outputText value="Senha" />
-							<h:inputSecret  style="width:280px;"></h:inputSecret>
+							<h:outputLabel value="Senha"/>
+							<h:inputSecret  style="width:280px;" styleClass="campo" value="#{UsuarioBean.senha }"></h:inputSecret>
 						</h:panelGrid>
                         <h:panelGrid columns="2">
                         <h:panelGroup>
-						<h:commandButton type="submit" value="Enviar"></h:commandButton>
-						<h:commandButton type="reset" value="limpar"></h:commandButton>
+						<h:commandButton type="submit" value="Enviar" style="margin-left:110px"  styleClass="botoes" action="#{UsuarioBean.validarUsuario }"></h:commandButton>
+						<h:commandButton type="reset" value="limpar" styleClass="botoes"></h:commandButton>
 						</h:panelGroup>
 						</h:panelGrid>
+						<h:commandLink value="Recuperar Minha Senha" style="margin-left:99px;"></h:commandLink>
 					</fieldset>
-				 <h:commandLink value="recuperar senha"></h:commandLink>
-				</h:form>
+				 </h:form>
 			</div>
 			<div id="footer"></div>
 		</div>
