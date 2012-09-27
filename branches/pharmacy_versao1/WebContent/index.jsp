@@ -14,7 +14,7 @@
 
 		<div id="content">
 			<div id="top">
-			<h:graphicImage value="/img/4.jpg" alt="logo" width="180" height="134" style="margin-left:100px;"></h:graphicImage>
+			<h:graphicImage value="/img/10.png" alt="logo" width="500" height="134" style="margin-left:160px; "></h:graphicImage> 
 			</div>	
 					
 			<div id="middle">
