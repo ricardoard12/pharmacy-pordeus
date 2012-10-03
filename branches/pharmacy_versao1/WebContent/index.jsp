@@ -22,10 +22,10 @@
 					<fieldset >
 						<h:panelGrid columns="2">
 							<h:outputLabel value="Login"/>
-							<h:inputText  style="width:280px;" value="#{UsuarioBean.login}" styleClass="campo"></h:inputText>
+							<h:inputText  style="width:280px;" value="#{UsuarioBean.usuario.login}" styleClass="campo"></h:inputText>
 
 							<h:outputLabel value="Senha"/>
-							<h:inputSecret  style="width:280px;" styleClass="campo" value="#{UsuarioBean.senha }"></h:inputSecret>
+							<h:inputSecret  style="width:280px;" styleClass="campo" value="#{UsuarioBean.usuario.senha }"></h:inputSecret>
 						</h:panelGrid>
                         <h:panelGrid columns="2">
                         <h:panelGroup>
