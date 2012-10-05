@@ -115,4 +115,9 @@ public class MedicamentoBean {
 		this.imed = imed;
 	}
 
+	public String excluirMedicamento(){
+		lista.remove(medicamento);
+		medicamento = new Medicamento();
+		return "";
+	}
 }

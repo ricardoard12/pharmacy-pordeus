@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,21 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<f:view>
 
-<div id="error_msg">
-    <%
-                String sucesso = (String) session.getAttribute("sucesso");
-                String erro = (String) session.getAttribute("erro");
-                session.removeAttribute("sucesso");
-                session.removeAttribute("erro");
+		<h:form>
+		
+		<h:outputText>Este Usuário já está cadastrado..</h:outputText>
+		<br/>
+		<h:commandLink action="cancelar" immediate="true">Voltar</h:commandLink>
+		
+		</h:form>
+	</f:view>
 
-            if (erro != null) {%>
-                <p class="mensagemErro" style="color: red"><%=erro%></p>
-    <%}
-                if (sucesso != null) {%>
-                <p class="mensagemSucesso" style="color: blue"><%=sucesso%></p>
-    <%}%>
-    
-</div>
 </body>
 </html>

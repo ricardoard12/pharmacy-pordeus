@@ -43,7 +43,13 @@
 	 <to-view-id>/Home.jsp</to-view-id>
 	</navigation-case>
 
-	
+
+	<navigation-case>
+		<from-outcome>erro</from-outcome>
+		<to-view-id>/erro.jsp</to-view-id>
+	</navigation-case>
+
+
 	</navigation-rule>
 	
 	<managed-bean>
@@ -74,6 +80,21 @@
 		<managed-bean-scope>session </managed-bean-scope>
 	</managed-bean>
 	
+	<managed-bean>
+
+		<managed-bean-name>
+				PacienteBean
+		</managed-bean-name>
+		
+		<managed-bean-class>
+			br.ufc.si.farmacia.controller.PacienteBean
+		</managed-bean-class>
+
+		<managed-bean-scope>
+			session
+		</managed-bean-scope>
+
+	</managed-bean>
 	
 		
 </faces-config>
