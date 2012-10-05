@@ -28,6 +28,7 @@
 			</fieldset>
 			
 			<h:commandButton value = "#{msgs['Unidade.cadastro.botao']}" action="#{UnidadeBean.Cadastrar}"/>
+			
 		</h:form>
 	</f:view>
 </body>

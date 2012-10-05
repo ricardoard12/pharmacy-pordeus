@@ -2,16 +2,14 @@
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13455929859735" configfile="/Pharmacy/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="Principal" x="122" y="178" id="pf13455930112496" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13455930112497" path="/Principal.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="removerRemedio" x="338" y="178" id="pf13455930112498" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13455930112497" path="/removerRemedio.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="754" id="pf13485747951720" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13485747951721 pf13485747951722 pf13485748887037" path="/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="1138" id="pf13485747951720" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13485747951721 pf13485747951722 pf13485748887037" path="/*"/>
   <nodes xsi:type="pageflow:PFPage" name="confirmacao_cadastro" x="338" y="562" id="pf13485747951723" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13485747951721" path="/confirmacao_cadastro.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="cadastrar_medicamento" x="338" y="946" id="pf13485747951734" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf13485747951722" path="/cadastrar_medicamento.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="Home" id="pf13485748887038" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf13485748887037" path="/Home.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="remover_unidade" id="pf134944356179712" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf13494446119901 pf13494446417703" path="/remover_unidade.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="listar_unidades" id="pf134944356179714" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf13494446119901 pf13494446417703" path="/listar_unidades.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Home" x="338" y="1330" id="pf13485748887038" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf13485748887037" path="/Home.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="remover_unidade" x="122" y="1522" id="pf134944356179712" referenceLink="//@navigationRule.2/@fromViewId|" path="/remover_unidade.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="listar_unidades" x="122" y="1906" id="pf134944356179714" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" path="/listar_unidades.jsp"/>
   <links id="pf13455930112497" target="pf13455930112498" source="pf13455930112496" outcome="remover"/>
   <links id="pf13485747951721" target="pf13485747951723" source="pf13485747951720" outcome="imprimir"/>
   <links id="pf13485747951722" target="pf13485747951734" source="pf13485747951720" outcome="cancelar"/>
   <links id="pf13485748887037" target="pf13485748887038" source="pf13485747951720" outcome="acesso"/>
-  <links id="pf13494446119901" target="pf134944356179714" source="pf134944356179712" outcome="removerunidade"/>
-  <links id="pf13494446417703" target="pf134944356179714" source="pf134944356179712" outcome="naoremovido"/>
 </pageflow:Pageflow>

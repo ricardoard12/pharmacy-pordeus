@@ -49,11 +49,10 @@ public class UnidadeDAO implements IUnidadeDAO {
 		return false;
 	}// fim do método atualizar
 
-	public boolean removerUnidade(Unidade unidade, int id) {
+	public boolean removerUnidade(Unidade unidade) {
 		Session session = HibernateUtil.getSession();
 		Transaction txt = session.beginTransaction();
 		try {
-			unidade = (Unidade) session.get(Unidade.class, id);
 			session.delete(unidade);
 			txt.commit();
 
