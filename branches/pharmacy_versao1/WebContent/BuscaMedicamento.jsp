@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="js/jquery-1.8.2.min.js"
+<script language="JavaScript" src="js/jquery-1.8.2.js"
 	type="text/javascript"></script>
 <script language="JavaScript" type="text/javascript">
 	$(function() {
@@ -122,8 +122,9 @@
 
 			<div id="content_right">
               
-<h:form>
+
 				<fieldset>
+				
 					<legend style="margin-left: 200px;">
 						<h:outputText value="Buscar Medicamento" />
 					</legend>
@@ -228,9 +229,10 @@
 							<h:commandLink value="atualizar"></h:commandLink>
 						</h:column>
 					</h:dataTable>
+					
 				</fieldset>
 		
-		</h:form>
+		
 			</div>
 
 		</div>
