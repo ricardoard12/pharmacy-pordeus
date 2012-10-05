@@ -12,7 +12,6 @@ import br.ufc.si.farmacia.model.Unidade;
 
 public class UnidadeDAO implements IUnidadeDAO {
 
-	
 	public void salvarUnidade(Unidade unidade) {
 		Session session = HibernateUtil.getSession();
 		Transaction txt = session.beginTransaction();
@@ -31,7 +30,6 @@ public class UnidadeDAO implements IUnidadeDAO {
 
 	}// fim do método salvar
 
-	
 	public boolean atualizarUnidade(Unidade unidade) {
 		Session session = HibernateUtil.getSession();
 		Transaction txt = session.beginTransaction();
@@ -51,11 +49,11 @@ public class UnidadeDAO implements IUnidadeDAO {
 		return false;
 	}// fim do método atualizar
 
-	
-	public boolean removerUnidade(Unidade unidade) {
+	public boolean removerUnidade(Unidade unidade, int id) {
 		Session session = HibernateUtil.getSession();
 		Transaction txt = session.beginTransaction();
 		try {
+			unidade = (Unidade) session.get(Unidade.class, id);
 			session.delete(unidade);
 			txt.commit();
 
@@ -71,7 +69,6 @@ public class UnidadeDAO implements IUnidadeDAO {
 
 		return false;
 	}// fim do método remover
-
 
 	public List<Unidade> listaTodos() {
 		Session session = HibernateUtil.getSession();

@@ -7,12 +7,11 @@ import br.ufc.si.farmacia.model.Unidade;
 public interface IUnidadeDAO {
 
 	public void salvarUnidade(Unidade unidade);
-	
+
 	public boolean atualizarUnidade(Unidade unidade);
-	
-	public boolean removerUnidade(Unidade unidade);
-	
+
+	public boolean removerUnidade(Unidade unidade, int id);
+
 	public List<Unidade> listaTodos();
-	
-	
-}//fim da interface
+
+}// fim da interface
