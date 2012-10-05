@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="js/jquery-1.3.2.js"
+<script language="JavaScript" src="js/jquery-1.8.2.min.js"
 	type="text/javascript"></script>
 <script language="JavaScript" type="text/javascript">
 	$(function() {
@@ -34,8 +34,7 @@
 				<li class="parent"><a href="#" title="">Medicamento</a>
 					<ul class="sub-menu">
 						<li><a href="cadastrar_medicamento.jsp" title="">Cadastrar</a></li>
-						<li><a href="#" title="">Listar</a></li>
-						<li><a href="#" title="">Editar/Remover</a></li>
+						<li><a href="BuscaMedicamento.jsp" title="">Listar</a></li>
 					</ul></li>
 				<li class="parent"><a href="#" title="">Paciente</a>
 					<ul class="sub-menu">

@@ -3,55 +3,56 @@ body {
 	font-family: Verdana, Tahoma, Arial;
 }
 
-ul{
+ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
 ul#menu {
-	width: 195px;	
+	width: 195px;
 }
 
-ul#menu li {                
-	color: #0E464E;        
-	line-height: 19px;   
-	background: #20b2aa;      
+ul#menu li {
+	color: #0E464E;
+	line-height: 19px;
+	background: #20b2aa;
 }
 
-ul#menu li.header {      
+ul#menu li.header {
 	background: #DFDFDF;
-	font-weight: lighter; 
+	font-weight: lighter;
 	padding: 0px 3px;
-	text-align:center;
+	text-align: center;
 	font-size: 13pt;
-}   
+}
 
 ul#menu li a {
 	color: white;
 	text-decoration: none;
-	display: block;       
+	display: block;
 	padding: 0px 3px;
 	outline: none;
 	margin-top: 10px;
-}                     
+	border-bottom: 1px white solid;
+}
 
-ul#menu li.parent > a {
+ul#menu li.parent>a {
 	background: transparent url('../img/down.gif') right center no-repeat;
-}                   
+}
 
-ul#menu li.aberto > a {
+ul#menu li.aberto>a {
 	background: transparent url('../img/up.gif') right center no-repeat;
-}                   
+}
 
-ul#menu li a:hover {   
-	background: #20b2aa; 
+ul#menu li a:hover {
+	background: #20b2aa;
 	border: 1px white solid;
 }
 
 ul#menu li ul.sub-menu {
-  	display: none;
-}                 
+	display: none;
+}
 
 ul#menu li ul.sub-menu li a {
 	padding-left: 15px;
@@ -61,9 +62,8 @@ ul#menu li ul.sub-menu li a {
 ul#menu li ul.sub-menu li a:HOVER {
 	padding-left: 15px;
 	border: 1px white solid;
+	
 }
-
-
 
 #top {
 	margin-top: 5px;
@@ -97,13 +97,11 @@ ul#menu li ul.sub-menu li a:HOVER {
 }
 
 #content #content_left #menuUser {
-
 	width: 196px;
 	height: 585px;
 	margin: 0px;
-	border:1px white solid ;
-	background: #20b2aa;  
-	
+	border: 1px white solid;
+	background: #20b2aa;
 }
 
 #content  #content_right {
@@ -114,11 +112,12 @@ ul#menu li ul.sub-menu li a:HOVER {
 	margin-right: 10px;
 }
 
-#content  #content_right fieldset{
+#content  #content_right fieldset {
 	width: 650px;;
-	height: 565px;
+	height: 572px;
 	float: right;
 	color: #0E464E;
+	border: none;
 }
 
 .campo {
@@ -127,20 +126,22 @@ ul#menu li ul.sub-menu li a:HOVER {
 	margin-bottom: 5px;
 }
 
+.texto{
+	color: #0E464E;
+	margin-left: 10px;
+}
 
-
-#content  #content_right fieldset input.botoes{ 
-	width:80px;
+#content  #content_right fieldset input.botoes {
+	width: 80px;
 	margin-left: 15px;
-	margin-top:5px;
-    color: #000;
-    border: #CCC solid 1px;
-
+	margin-top: 5px;
+	color: #000;
+	border: #CCC solid 1px;
 }
 
 #content  #content_right fieldset input.botoes:HOVER {
 	color: #fff;
-    background: #0E464E;
+	background: #0E464E;
 }
 
 a {
@@ -154,4 +155,25 @@ label {
 	font-family: Verdana sans-serif;
 	font-size: 15pt;
 	color: #000;
+}
+
+.tabela {
+	font-family: Arial;
+	font-size: 10pt;
+	width: 650px;
+	margin-left: 0px;
+}
+
+.cabecalho {
+	text-align: center;
+	color: white;
+	background: #20b2aa;
+}
+
+.linha1 {
+	background: #C9C9C9;
+}
+
+.linha2 {
+	background: white;
 }
