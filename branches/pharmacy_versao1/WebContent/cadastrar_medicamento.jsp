@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="js/jquery-1.8.2.min.js"
+<script language="JavaScript" src="js/jquery-1.8.2.js"
 	type="text/javascript"></script>
 <script language="JavaScript" type="text/javascript">
 	$(function() {
@@ -35,32 +35,38 @@
 			<div id="content_left">
 				<div id="menuUser">
 					<ul id="menu">
-						<li class="header">Menu</li>
+
 						<li><a href="Home.jsp" title="">Home</a></li>
+						<li class="header">Módulo CAF</li>
 						<li class="parent"><a href="#" title="">Medicamento</a>
 							<ul class="sub-menu">
 								<li><a href="cadastrar_medicamento.jsp" title="">Cadastrar</a></li>
 								<li><a href="BuscaMedicamento.jsp" title="">Listar</a></li>
-								<li><a href="removerRemedio.jsp" title="">Editar/Remover</a></li>
 							</ul></li>
-						<li class="parent"><a href="#" title="">Paciente</a>
-							<ul class="sub-menu">
-								<li><a href="#" title="">Cadastrar</a></li>
-								<li><a href="#" title="">Listar</a></li>
-								<li><a href="#" title="">Editar/Remover</a></li>
-							</ul></li>
+
 						<li class="parent"><a href="#" title="">Unidade</a>
 							<ul class="sub-menu">
 								<li><a href="#" title="">Cadastrar</a></li>
 								<li><a href="#" title="">Listar</a></li>
 								<li><a href="#" title="">Editar/Remover</a></li>
 							</ul></li>
-						<li class="parent"><a href="#" title="">Dispensa</a>
+						<li class="parent"><a href="#" title="">Dispensar para
+								Unidade</a>
 							<ul class="sub-menu">
 								<li><a href="#" title="">Cadastrar</a></li>
 								<li><a href="#" title="">Listar</a></li>
 								<li><a href="#" title="">Editar/Remover</a></li>
 							</ul></li>
+
+
+						<li class="header">Módulo UDP</li>
+						<li class="parent"><a href="#" title="">Paciente</a>
+							<ul class="sub-menu">
+								<li><a href="#" title="">Cadastrar</a></li>
+								<li><a href="#" title="">Listar</a></li>
+								<li><a href="#" title="">Editar/Remover</a></li>
+							</ul></li>
+
 						<li class="parent"><a href="#" title="">Relatórios</a>
 							<ul class="sub-menu">
 								<li><a href="#" title="">Dispensas</a></li>

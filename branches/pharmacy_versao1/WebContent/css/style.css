@@ -11,30 +11,35 @@ ul {
 
 ul#menu {
 	width: 195px;
+	font-family: 12pt Arial;
+	font-weight: bold;
 }
 
 ul#menu li {
 	color: #0E464E;
 	line-height: 19px;
-	background: #20b2aa;
+	
 }
 
 ul#menu li.header {
 	background: #DFDFDF;
-	font-weight: lighter;
+	font-weight: 400;
 	padding: 0px 3px;
 	text-align: center;
 	font-size: 13pt;
+	font-family: 12pt Arial;
+	color: #0E464E;
+	
 }
 
 ul#menu li a {
-	color: white;
+	color: #20b2aa;
 	text-decoration: none;
 	display: block;
 	padding: 0px 3px;
 	outline: none;
 	margin-top: 10px;
-	border-bottom: 1px white solid;
+	border-bottom: 1px #DFDFDF solid;
 }
 
 ul#menu li.parent>a {
@@ -47,7 +52,8 @@ ul#menu li.aberto>a {
 
 ul#menu li a:hover {
 	background: #20b2aa;
-	border: 1px white solid;
+	border: 1px #DFDFDF solid;
+	color: white;
 }
 
 ul#menu li ul.sub-menu {
@@ -56,11 +62,12 @@ ul#menu li ul.sub-menu {
 
 ul#menu li ul.sub-menu li a {
 	padding-left: 15px;
-	color: #a0522d;
+	color: #008000;
 }
 
 ul#menu li ul.sub-menu li a:HOVER {
 	padding-left: 15px;
+	color:white;
 	border: 1px white solid;
 	
 }
@@ -94,6 +101,8 @@ ul#menu li ul.sub-menu li a:HOVER {
 	margin-top: 5px;
 	margin-left: 1px;
 	border-right: 1px gray solid;
+	
+	
 }
 
 #content #content_left #menuUser {
@@ -101,7 +110,7 @@ ul#menu li ul.sub-menu li a:HOVER {
 	height: 585px;
 	margin: 0px;
 	border: 1px white solid;
-	background: #20b2aa;
+	
 }
 
 #content  #content_right {
@@ -146,7 +155,6 @@ ul#menu li ul.sub-menu li a:HOVER {
 
 a {
 	display: block;
-	font-family: Arial;
 	font-size: 10pt;
 	color: #000;
 }
