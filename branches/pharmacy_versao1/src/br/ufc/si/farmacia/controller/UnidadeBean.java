@@ -3,17 +3,20 @@ package br.ufc.si.farmacia.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.event.ActionEvent;
 import javax.faces.model.SelectItem;
 
 import org.hibernate.Session;
 
 import br.ufc.si.farmacia.dao.UnidadeDAO;
 import br.ufc.si.farmacia.hibernate.util.HibernateUtil;
+import br.ufc.si.farmacia.interfaces.IUnidadeDAO;
 import br.ufc.si.farmacia.model.Unidade;
 
 public class UnidadeBean {
+	Unidade uni = new Unidade();
+	IUnidadeDAO iunidade = new UnidadeDAO();
 
-	private Unidade unidade = new Unidade();
 	private List<SelectItem> unidades;
 	private List<Unidade> unidadez;
 	int id;
@@ -30,13 +33,21 @@ public class UnidadeBean {
 		}
 		session.close();
 	}
+	
+	public String Cadastrar() {
+		List<Unidade> lista = iunidade.listaTodos();
 
-	public Unidade getUnidade() {
-		return unidade;
+		for (Unidade unidade : lista) {
+			if (unidade.getNome().equals(uni.getNome()))
+				return "falha";// tem alguem com o mesmo nome
+		}
+
+		iunidade.salvarUnidade(uni);
+		return "Sucesso";
 	}
-
-	public void setUnidade(Unidade unidade) {
-		this.unidade = unidade;
+	
+	public void remover(ActionEvent actionEvent) {
+		unidadeDao.removerUnidade(uni, id);
 	}
 
 	public List<SelectItem> getUnidades() {
@@ -63,9 +74,30 @@ public class UnidadeBean {
 		this.id = id;
 	}
 
-	public String remover() {
-		unidadeDao.removerUnidade(unidade, id);
-		return "removido";
+	public UnidadeDAO getUnidadeDao() {
+		return unidadeDao;
+	}
+
+	public void setUnidadeDao(UnidadeDAO unidadeDao) {
+		this.unidadeDao = unidadeDao;
+	}
+
+	
+
+	public Unidade getUni() {
+		return uni;
+	}
+
+	public void setUni(Unidade uni) {
+		this.uni = uni;
+	}
+
+	public IUnidadeDAO getIunidade() {
+		return iunidade;
+	}
+
+	public void setIunidade(IUnidadeDAO iunidade) {
+		this.iunidade = iunidade;
 	}
 
 }

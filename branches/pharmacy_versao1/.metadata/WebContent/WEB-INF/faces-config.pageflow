@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13455929859735" configfile="/Pharmacy_versao1/WebContent/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13455929859735" configfile="/Pharmacy/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="Principal" x="122" y="178" id="pf13455930112496" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13455930112497" path="/Principal.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="removerRemedio" x="338" y="178" id="pf13455930112498" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13455930112497" path="/removerRemedio.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="754" id="pf13485747951720" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13485747951721 pf13485747951722 pf13485748887037" path="/*"/>
