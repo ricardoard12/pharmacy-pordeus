@@ -23,54 +23,12 @@
 	});
 </script>
 
-<script language="JavaScript" type="text/javascript">
-	$(function() {
 
-		function setInput(obj, action, text) {
-
-			if (action) {
-				if (obj.value == text)
-					obj.value = "";
-			} else {
-				if (obj.value == "")
-					obj.value = text;
-			}
-
-		}
-
-		$('#param').focus(function() {
-			setInput(this, true, 'Digite o texto aqui');
-		});
-		$('#param').blur(function() {
-			setInput(this, false, 'Digite o texto aqui');
-		});
-
-		$('#radio').click(function() {
-			
-           
-            	$('#label').html('Digite o Texto de Acordo com o Critério Escolhido');
-            
-			
-			$('#param').val('Digite o texto aqui');
-			$('#param').focus(function() {
-				setInput(this, true, 'Digite o texto aqui');
-			});
-			$('#param').blur(function() {
-				setInput(this, false, 'Digite o texto aqui?');
-			});
-		});
-
-	});
-	
-	
-	
-		
-</script>
 <title>Insert title here</title>
 </head>
-<body >
+<body>
 	<f:view>
-   
+
 		<div id="top">
 			<h:graphicImage value="/img/10.png" alt="logo" width="400"
 				height="50" style="margin-left:250px; "></h:graphicImage>
@@ -121,118 +79,124 @@
 			</div>
 
 			<div id="content_right">
-              
+				<h:form>
 
-				<fieldset>
-				
-					<legend style="margin-left: 200px;">
-						<h:outputText value="Buscar Medicamento" />
-					</legend>
-					<h:messages style="color: red" showDetail="false" />
+					<fieldset>
 
-
-					<h:panelGrid columns="1" title="Medicamentos">
-
-						<h:outputText value="Critérios de Consulta" styleClass="texto" />
-						<h:selectOneRadio layout="pageDirection" onclick="submit()"
-							value="#{MedicamentoBean.tipo_busca}" required="true"
-							requiredMessage="Secione um tipo de busca!" styleClass="texto"
-							id="radio">
-							<f:selectItem
-								itemLabel="#{msgs['Busca.medicamento.radio.codigo']}"
-								itemValue="codigo" />
-							<f:selectItem itemLabel="#{msgs['Busca.medicamento.radio.nome']}"
-								itemValue="nome" />
-							<f:selectItem itemLabel="#{msgs['Busca.medicamento.radio.lote']}"
-								itemValue="lote" />
-							<f:selectItem itemLabel="#{msgs['Busca.medicamento.radio.nf']}"
-								itemValue="nota" />
-							<f:selectItem
-								itemLabel="#{msgs['Busca.medicamento.radio.todos']}"
-								itemValue="todos" />
-						</h:selectOneRadio>
+						<legend style="margin-left: 200px;">
+							<h:outputText value="Buscar Medicamento" />
+						</legend>
+						<h:messages style="color: red" showDetail="false" />
 
 
+						<h:panelGrid columns="1" title="Medicamentos">
 
-					</h:panelGrid>
-
-					<h:panelGrid>
-					<h:outputText value="Digite o Texto de Acordo com o Critério Escolhido"  
-								styleClass="texto" id="label"/>
-
-						<h:panelGroup>
-							<h:inputText value="#{MedicamentoBean.parametro}" size="40"
-								onchange="submint()" required="true"
-								requiredMessage="O campo Parâmetro é obrigatório!"
-								style=" margin-left:20px;" styleClass="campo" id="param" />
-							<h:commandButton value="#{msgs['Busca.medicamento.botao.label']}"
-								actionListener="#{MedicamentoBean.EfetuaBusca}"
-								styleClass="botoes" />
-						</h:panelGroup>
-					</h:panelGrid>
+							<h:outputText value="Critérios de Consulta" styleClass="texto" />
+							<h:selectOneRadio layout="pageDirection" onclick="submit()"
+								value="#{MedicamentoBean.tipo_busca}" required="true"
+								requiredMessage="Secione um tipo de busca!" styleClass="texto"
+								id="radio">
+								<f:selectItem
+									itemLabel="#{msgs['Busca.medicamento.radio.codigo']}"
+									itemValue="codigo" />
+								<f:selectItem
+									itemLabel="#{msgs['Busca.medicamento.radio.nome']}"
+									itemValue="nome" />
+								<f:selectItem
+									itemLabel="#{msgs['Busca.medicamento.radio.lote']}"
+									itemValue="lote" />
+								<f:selectItem itemLabel="#{msgs['Busca.medicamento.radio.nf']}"
+									itemValue="nota" />
+								<f:selectItem
+									itemLabel="#{msgs['Busca.medicamento.radio.todos']}"
+									itemValue="todos" />
+							</h:selectOneRadio>
 
 
 
-					<h:dataTable value="#{MedicamentoBean.lista}" var="item"
-						rendered="true" styleClass="tabela" headerClass="cabecalho"
-						rowClasses="linha1,linha2">
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="#{msgs['Busca.medicamento.table.codigo']}" />
-							</f:facet>
-							<h:outputText value="#{item.idMedicamento}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="#{msgs['Busca.medicamento.table.nome']}" />
-							</f:facet>
-							<h:outputText value="#{item.nomeMedicamento}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText
-									value="#{msgs['Busca.medicamento.table.apresentacao']}" />
-							</f:facet>
-							<h:outputText value="#{item.apresentacaoMedicamento}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="#{msgs['Busca.medicamento.table.lote']}" />
-							</f:facet>
-							<h:outputText value="#{item.loteMedicamento}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="#{msgs['Busca.medicamento.table.validae']}" />
-							</f:facet>
-							<h:outputText value="#{item.validadeMedicamento}">
-								<f:convertDateTime type="date" dateStyle="short" />
-							</h:outputText>
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="Dispensar para Paciente" />
-							</f:facet>
-							<h:outputText value="Link" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="Dispensar para Unidade" />
-							</f:facet>
-							<h:outputText value="Link" />
-						</h:column>
-						
-						<h:column>
-							<f:facet name="header">
-								<h:outputText value="Operação" />
-							</f:facet>
-							<h:commandLink value="atualizar"></h:commandLink>
-						</h:column>
-					</h:dataTable>
-					
-				</fieldset>
-		
-		
+						</h:panelGrid>
+
+						<h:panelGrid>
+							<h:outputText
+								value="Digite o Texto de Acordo com o Critério Escolhido"
+								styleClass="texto" id="label" />
+
+							<h:panelGroup>
+								<h:inputText value="#{MedicamentoBean.parametro}" size="40"
+									onchange="submint()" required="true"
+									requiredMessage="O campo Parâmetro é obrigatório!"
+									style=" margin-left:20px;" styleClass="campo" id="param" />
+								<h:commandButton
+									value="#{msgs['Busca.medicamento.botao.label']}"
+									actionListener="#{MedicamentoBean.EfetuaBusca}"
+									styleClass="botoes" />
+							</h:panelGroup>
+						</h:panelGrid>
+
+
+
+						<h:dataTable value="#{MedicamentoBean.lista}" var="item"
+							rendered="true" styleClass="tabela" headerClass="cabecalho"
+							rowClasses="linha1,linha2">
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="#{msgs['Busca.medicamento.table.codigo']}" />
+								</f:facet>
+								<h:outputText value="#{item.idMedicamento}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="#{msgs['Busca.medicamento.table.nome']}" />
+								</f:facet>
+								<h:outputText value="#{item.nomeMedicamento}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText
+										value="#{msgs['Busca.medicamento.table.apresentacao']}" />
+								</f:facet>
+								<h:outputText value="#{item.apresentacaoMedicamento}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="#{msgs['Busca.medicamento.table.lote']}" />
+								</f:facet>
+								<h:outputText value="#{item.loteMedicamento}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText
+										value="#{msgs['Busca.medicamento.table.validae']}" />
+								</f:facet>
+								<h:outputText value="#{item.validadeMedicamento}">
+									<f:convertDateTime type="date" dateStyle="short" />
+								</h:outputText>
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="Dispensar para Paciente" />
+								</f:facet>
+								<h:outputText value="Link" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="Dispensar para Unidade" />
+								</f:facet>
+								<h:outputText value="Link" />
+							</h:column>
+
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="Operação" />
+								</f:facet>
+								<h:commandLink value="atualizar"></h:commandLink>
+							</h:column>
+						</h:dataTable>
+
+					</fieldset>
+
+				</h:form>
+
 			</div>
 
 		</div>
