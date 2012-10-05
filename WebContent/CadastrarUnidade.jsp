@@ -12,7 +12,7 @@
 		<fieldset>
 
 			<legend style="margin-left: 200px;">
-				<h:outputText value="Buscar Medicamento" />
+				<h:outputText value="Cadastrar Unidade" />
 			</legend>
 			<h:messages style="color: red" showDetail="false" />
 			

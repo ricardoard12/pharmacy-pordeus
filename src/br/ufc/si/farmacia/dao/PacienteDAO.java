@@ -1,13 +1,16 @@
-package br.ufc.si.farmacia.dao;
+package br.ufc.si.farmacia.dao; 
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import br.ufc.si.farmacia.hibernate.util.HibernateUtil;
 import br.ufc.si.farmacia.interfaces.IPacienteDAO;
+import br.ufc.si.farmacia.model.Medicamento;
 import br.ufc.si.farmacia.model.Paciente;
 
 public class PacienteDAO implements IPacienteDAO {
@@ -25,7 +28,7 @@ public class PacienteDAO implements IPacienteDAO {
 		} finally {
 			sessao.close();
 		}
-	}// fim do método inserir paciente
+	}// fim do mï¿½todo inserir paciente
 
 	
 	public boolean removerPaciente(Paciente paciente) {
@@ -43,7 +46,7 @@ public class PacienteDAO implements IPacienteDAO {
 			sessao.close();
 		}
 		return false;
-	}// fim do método remover paciente
+	}// fim do mï¿½todo remover paciente
 
 	
 	public boolean atualizarPaciente(Paciente paciente) {
@@ -63,7 +66,7 @@ public class PacienteDAO implements IPacienteDAO {
 		}
 
 		return false;
-	}// fim do método atualizar paciente
+	}// fim do mï¿½todo atualizar paciente
 
 	
 	public Paciente pacientePorId(int id) {
@@ -82,7 +85,7 @@ public class PacienteDAO implements IPacienteDAO {
 		}
 
 		return null;
-	}// fim do método buscar por id
+	}// fim do mï¿½todo buscar por id
 
 	
 	public List<Paciente> listaTodosPacientes() {
@@ -102,6 +105,30 @@ public class PacienteDAO implements IPacienteDAO {
 		}
 
 		return null;
-	}// fim do método listar todos os pacientes
+	}// fim do mï¿½todo listar todos os pacientes
 
+
+	public boolean pacientePorRg(Long long1) {
+		Paciente paciente = new Paciente();
+		Session sessao = HibernateUtil.getSession();
+		Transaction trasaction = sessao.beginTransaction();
+		
+		try {
+	
+			Criteria c = sessao.createCriteria(Paciente.class);
+			c.add(Restrictions.eq("rg_paciente", long1));
+			return true;
+			
+		} catch (Exception e) {
+
+		} finally {
+			trasaction.commit();
+			sessao.close();
+		}
+
+		return false;
+	}// fim do mï¿½todo buscar por id
+	
+	
+	
 }// fim da classe pacienteDAO
