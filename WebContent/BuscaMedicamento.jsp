@@ -7,8 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="js/jquery-1.8.2.js"
-	type="text/javascript"></script>
+<script language="JavaScript" src="js/jquery-1.8.2.js" type="text/javascript"></script>
 <script language="JavaScript" type="text/javascript">
 	$(function() {
 		// Evento de clique do elemento: ul#menu li.parent > a

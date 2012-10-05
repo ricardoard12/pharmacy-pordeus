@@ -10,7 +10,7 @@ public interface IUnidadeDAO {
 
 	public boolean atualizarUnidade(Unidade unidade);
 
-	public boolean removerUnidade(Unidade unidade, int id);
+	public boolean removerUnidade(Unidade unidade);
 
 	public List<Unidade> listaTodos();
 
