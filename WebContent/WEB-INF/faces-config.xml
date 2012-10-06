@@ -14,58 +14,30 @@
 		</resource-bundle>
 </application>
 
-    
-    <navigation-rule>
-	<from-view-id>/Principal.jsp</from-view-id>
-
-	<navigation-case>
-		<from-outcome>remover</from-outcome>
-		<to-view-id>/removerRemedio.jsp</to-view-id>
-	</navigation-case>
-
-	</navigation-rule>
-
+ 
+	
+	
+	
 	<navigation-rule>
-	<from-view-id>/*</from-view-id>
+	
+	<from-view-id>/index.jsp</from-view-id>
 	
 	<navigation-case>
-		<from-outcome>imprimir</from-outcome>
-		<to-view-id>/confirmacao_cadastro.jsp</to-view-id>
-	</navigation-case>
-
-	<navigation-case>
-		<from-outcome>cancelar</from-outcome>
-		<to-view-id>/cadastrar_medicamento.jsp</to-view-id>
-	</navigation-case>
-	
-	<navigation-case>
+	 
 	 <from-outcome>acesso</from-outcome>
-	 <to-view-id>/Home.jsp</to-view-id>
+	  
+	   <to-view-id>/Home.jsp</to-view-id>
+	
 	</navigation-case>
-
-
-	<navigation-case>
-		<from-outcome>erro</from-outcome>
-		<to-view-id>/erro.jsp</to-view-id>
-	</navigation-case>
-
-
+	
 	</navigation-rule>
 	
+	
+
 	<managed-bean>
-
-		<managed-bean-name>
-				MedicamentoBean
-		</managed-bean-name>
-		
-		<managed-bean-class>
-			br.ufc.si.farmacia.controller.MedicamentoBean
-		</managed-bean-class>
-
-		<managed-bean-scope>
-			session
-		</managed-bean-scope>
-
+		<managed-bean-name>MedicamentoBean</managed-bean-name>
+		<managed-bean-class>br.ufc.si.farmacia.controller.MedicamentoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	
 	<managed-bean>
@@ -75,26 +47,47 @@
 	</managed-bean>
 	
 	<managed-bean>
-		<managed-bean-name>  UsuarioBean </managed-bean-name>
+		<managed-bean-name>UsuarioBean</managed-bean-name>
 		<managed-bean-class> br.ufc.si.farmacia.controller.UsuarioBean 	</managed-bean-class>
 		<managed-bean-scope>session </managed-bean-scope>
 	</managed-bean>
 	
 	<managed-bean>
-
-		<managed-bean-name>
-				PacienteBean
-		</managed-bean-name>
-		
-		<managed-bean-class>
-			br.ufc.si.farmacia.controller.PacienteBean
-		</managed-bean-class>
-
-		<managed-bean-scope>
-			session
-		</managed-bean-scope>
-
+		<managed-bean-name>PacienteBean</managed-bean-name>
+		<managed-bean-class>br.ufc.si.farmacia.controller.PacienteBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	
+	
+	
+	<navigation-rule>
+	<from-view-id>/*</from-view-id>
+	<navigation-case>
+	<from-outcome>ListarUnidades</from-outcome>
+	<to-view-id>/listar_unidade.jsp</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+	<from-outcome>ListarPacientes</from-outcome>
+	<to-view-id>/listar_pacientes.jsp</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+	<from-outcome>atualizarUnidade</from-outcome>
+	<to-view-id>/atualizar_unidade.jsp</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+	<from-outcome>atualizarPaciente</from-outcome>
+	<to-view-id>/atualizar_paciente.jsp</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+	<from-outcome>atualizarMedicamento</from-outcome>
+	<to-view-id>/atualizar_medicamento.jsp</to-view-id>
+	</navigation-case>
+	
+	</navigation-rule>
 	
 		
 </faces-config>
