@@ -10,7 +10,6 @@ import org.hibernate.criterion.Restrictions;
 
 import br.ufc.si.farmacia.hibernate.util.HibernateUtil;
 import br.ufc.si.farmacia.interfaces.IPacienteDAO;
-import br.ufc.si.farmacia.model.Medicamento;
 import br.ufc.si.farmacia.model.Paciente;
 
 public class PacienteDAO implements IPacienteDAO {
@@ -25,6 +24,7 @@ public class PacienteDAO implements IPacienteDAO {
 			trasaction.commit();
 		} catch (Exception e) {
 			trasaction.rollback();
+			
 		} finally {
 			sessao.close();
 		}
@@ -108,16 +108,15 @@ public class PacienteDAO implements IPacienteDAO {
 	}// fim do m�todo listar todos os pacientes
 
 
-	public boolean pacientePorRg(Long long1) {
-		Paciente paciente = new Paciente();
+	public Paciente pacientePorRg(Paciente paciente) {
 		Session sessao = HibernateUtil.getSession();
 		Transaction trasaction = sessao.beginTransaction();
 		
 		try {
 	
 			Criteria c = sessao.createCriteria(Paciente.class);
-			c.add(Restrictions.eq("rg_paciente", long1));
-			return true;
+			c.add(Restrictions.eq("rg", paciente.getRg()));
+			return (Paciente) c.uniqueResult();
 			
 		} catch (Exception e) {
 
@@ -126,7 +125,7 @@ public class PacienteDAO implements IPacienteDAO {
 			sessao.close();
 		}
 
-		return false;
+		return null;
 	}// fim do m�todo buscar por id
 	
 	

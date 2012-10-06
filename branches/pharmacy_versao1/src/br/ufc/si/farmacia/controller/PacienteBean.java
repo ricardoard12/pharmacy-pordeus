@@ -5,7 +5,6 @@ import java.util.List;
 
 import br.ufc.si.farmacia.dao.PacienteDAO;
 import br.ufc.si.farmacia.interfaces.IPacienteDAO;
-import br.ufc.si.farmacia.model.Medicamento;
 import br.ufc.si.farmacia.model.Paciente;
 
 public class PacienteBean {
@@ -32,49 +31,47 @@ public class PacienteBean {
 	}
 
 	public String inserirPaciente() {
-		
-		boolean existe = verificaInsercaoPaciente(paciente); 	
-				
-		if(existe==false){
-			this.paciente = paciente;
-		
-			IPacienteDAO dao = new PacienteDAO();
-			dao.inserirPaciente(this.paciente);
+
+		if (ipaciente.pacientePorRg(this.paciente) == null) {
+
+			ipaciente.inserirPaciente(this.paciente);
 			return "imprimir";
 		}
-		
-		return "erro";
-		
+
+		return "ListarUnidades";
+
 	}
 
-	
-	private boolean verificaInsercaoPaciente(Paciente paciente2) {
-		IPacienteDAO dao = new PacienteDAO();
-				
-		boolean verifica = dao.pacientePorRg(paciente2.getRg());
-		
-		if (verifica == true)
-			return true;
-		
-		
-		return false;
-	}			
-	
-	
 	public PacienteBean() {
 		this.setPaciente(new Paciente());
-		
+
 	}
 
 	public PacienteBean(Paciente paciente) {
 		super();
 		this.paciente = paciente;
-		
+
 	}
-		
-	public String excluirPaciente(){
+
+	public String excluirPaciente() {
+	if(	ipaciente.removerPaciente(paciente) == true){
 		lista.remove(paciente);
 		paciente = new Paciente();
+	}
+		return "ListarPacientes";
+	}
+
+	public String listarPacientes() {
+		lista = ipaciente.listaTodosPacientes();
+		return "ListarPacientes";
+	}
+	
+	public String atualizar(){
+		return "atualizarPaciente";
+	}
+	
+	public String atualizarPaciente(){
+		ipaciente.atualizarPaciente(this.paciente);
 		return "";
 	}
 }

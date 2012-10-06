@@ -1,24 +1,35 @@
 package br.ufc.si.farmacia.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.event.ActionEvent;
 
-import java.util.List;
 import br.ufc.si.farmacia.dao.MedicamentoDAO;
 import br.ufc.si.farmacia.interfaces.IMedicamentoDAO;
 import br.ufc.si.farmacia.model.Medicamento;
 
 public class MedicamentoBean {
 
-	String parametro = new String();
-	String tipo_busca = new String();
+	private String parametro;
+	private String tipo_busca;
+	private Medicamento medicamento;
 
-	List<Medicamento> lista = new ArrayList<Medicamento>();
-	IMedicamentoDAO imed = new MedicamentoDAO();
+	private List<Medicamento> lista;
+	private IMedicamentoDAO imed;
+
+	public MedicamentoBean() {
+		this.setMedicamento(new Medicamento());
+		parametro = new String();
+		tipo_busca = new String();
+		lista = new ArrayList<Medicamento>();
+		imed = new MedicamentoDAO();
+
+	}
 
 	public void EfetuaBusca(ActionEvent e) {
 		if (tipo_busca.equals("codigo")) {
+			this.lista = new ArrayList<Medicamento>();
 			this.lista.add(imed.RemedioPorId(Integer.parseInt(parametro)));
 		} else if (tipo_busca.equals("nome")) {
 			this.lista = imed.BuscarMedicamentoPorNome(parametro);
@@ -64,11 +75,35 @@ public class MedicamentoBean {
 		return "imprimir";
 	}
 
-	private Medicamento medicamento;
+	// método para testar atualizar medicamento
+	// Author: Alessandro Menezes
+	public String BuscarMedicamentoTeste() {
 
-	public MedicamentoBean() {
-		this.setMedicamento(new Medicamento());
+		Integer id = medicamento.getIdMedicamento();
+		medicamento = imed.RemedioPorId(id);
+
+		return "";
 	}
+
+	public String atualizar() {
+		return "atualizarMedicamento";
+	}
+
+	public String atualizarMedicamento() {
+
+		imed.AtualizarRemedio(medicamento);
+		medicamento = new Medicamento();
+
+		return "";
+	}
+
+	public String LimparCampos() {
+		medicamento = new Medicamento();
+		return "";
+	}
+
+	// método para testar atualizar medicamento
+	// Author: Alessandro Menezes
 
 	public MedicamentoBean(Medicamento medicamento) {
 		super();
@@ -115,7 +150,7 @@ public class MedicamentoBean {
 		this.imed = imed;
 	}
 
-	public String excluirMedicamento(){
+	public String excluirMedicamento() {
 		lista.remove(medicamento);
 		medicamento = new Medicamento();
 		return "";

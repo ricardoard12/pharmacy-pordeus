@@ -1,11 +1,9 @@
 package br.ufc.si.farmacia.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.Session;
-
 import br.ufc.si.farmacia.dao.UnidadeDAO;
-import br.ufc.si.farmacia.hibernate.util.HibernateUtil;
 import br.ufc.si.farmacia.interfaces.IUnidadeDAO;
 import br.ufc.si.farmacia.model.Unidade;
 
@@ -15,11 +13,17 @@ public class UnidadeBean {
 	private List<Unidade> unidades;
 
 	public UnidadeBean() {
-		Session session = HibernateUtil.getSession();
+		
+		unidades = new ArrayList<Unidade>();
+		
+	}
+	
+	public String listarUnidades(){
 		unidades = iunidade.listaTodos();
-		session.close();
+		return "ListarUnidades";
 	}
 
+	
 	public String Cadastrar() {
 		List<Unidade> lista = iunidade.listaTodos();
 
@@ -36,6 +40,16 @@ public class UnidadeBean {
 		iunidade.removerUnidade(uni);
 		unidades = iunidade.listaTodos();
 		return "removido";
+	}
+	
+	
+	public String atualizarUnidade(){
+		iunidade.atualizarUnidade(this.uni);
+		return "";
+	}
+	
+	public String atualizar(){
+		return "atualizarUnidade";
 	}
 
 	public Unidade getUni() {

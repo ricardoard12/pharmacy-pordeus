@@ -75,12 +75,12 @@ left: 4px;
     -webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 }.campo:HOVER{
-	background:#dcdcdc;
+	
 	border:1px black solid;
 	margin-top:10px;
     -webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
-	color: #0000ff;
+	color:#0E464E;
 }
 .botoes{
 	border:1px white solid;
@@ -94,13 +94,13 @@ left: 4px;
 }
 .botoes:HOVER {
 	border:1px white solid;
-	background:#dcdcdc;
+	
 	width:70px;
 	height:23px;
 	margin-left: 20px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
-	 color: #0000ff;
+	 color:#0E464E;
 }
 a{
 	display:block;
