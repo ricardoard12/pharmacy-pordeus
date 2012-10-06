@@ -35,64 +35,61 @@
 			<div id="content_left">
 				<div id="menuUser">
 					<h:form>
-						<ul id="menu">
-
-							<li><a href="Home.jsp" title="">Home</a></li>
-							<li class="header">Módulo CAF</li>
-							<li class="parent"><a href="#" title="">Medicamento</a>
-								<ul class="sub-menu">
-									<li><a href="cadastrar_medicamento.jsp" title="">Cadastrar</a></li>
-									<li><a href="busca_medicamento.jsp" title="">Listar</a></li>
-								</ul></li>
-
-							<li class="parent"><a href="#" title="">Unidade</a>
-								<ul class="sub-menu">
-									<li><a href="cadastrar_unidade.jsp" title="">Cadastrar</a></li>
-									<li><h:commandLink value="Listar"
-											action="#{UnidadeBean.listarUnidades }"></h:commandLink></li>
-								</ul></li>
-							<li class="parent"><a href="#" title="">Dispensar para
-									Unidade</a>
-								<ul class="sub-menu">
-									<li><a href="#" title="">Cadastrar</a></li>
-									<li><a href="#" title="">Listar</a></li>
-								</ul></li>
-
-
-
-
-							<li class="header">Módulo UDP</li>
-							<li class="parent"><a href="#" title="">Paciente</a>
-								<ul class="sub-menu">
-									<li><a href="cadastrar_paciente.jsp" title="">Cadastrar</a></li>
-									<li><h:commandLink value="Listar"
-											action="#{PacienteBean.listarPacientes }"></h:commandLink></li>
-								</ul></li>
-
-							<li class="parent"><a href="#" title="">Relatórios</a>
-								<ul class="sub-menu">
-									<li><a href="#" title="">Dispensas Unidades</a></li>
-
-									<li><a href="#" title="">Medicamentos</a></li>
-									<li><a href="#" title="">Dispensas Pacientes</a></li>
-
-								</ul></li>
-						</ul>
-					</h:form>
+			<ul id="menu">
+				
+				<li><a href="Home.jsp" title="">Home</a></li>
+				<li class="header">Módulo CAF</li>
+				<li class="parent"><a href="#" title="">Medicamento</a>
+					<ul class="sub-menu">
+						<li><a href="cadastrar_medicamento.jsp" title="">Cadastrar</a></li>
+						<li><a href="busca_medicamento.jsp" title="">Listar</a></li>
+					</ul></li>
+				
+					<li class="parent"><a href="#" title="">Unidade</a>
+					<ul class="sub-menu">
+						<li><a href="cadastrar_unidade.jsp" title="">Cadastrar</a></li>
+						<li><h:commandLink value="Listar" action="#{UnidadeBean.listarUnidades }"></h:commandLink></li>
+					</ul></li>
+					<li class="parent"><a href="#" title="">Dispensar para Unidade</a>
+					<ul class="sub-menu">
+						<li><a href="#" title="">Cadastrar</a></li>
+						<li><a href="#" title="">Listar</a></li>
+					</ul></li>
+					
+					
+					
+					
+					<li class="header">Módulo UDP</li>
+					<li class="parent"><a href="#" title="">Paciente</a>
+					<ul class="sub-menu">
+						<li><a href="cadastrar_paciente.jsp" title="">Cadastrar</a></li>
+						<li><h:commandLink value="Listar" action="#{PacienteBean.listarPacientes }"></h:commandLink></li>
+					</ul></li>
+					
+					<li class="parent"><a href="#" title="">Relatórios</a>
+					<ul class="sub-menu">
+					     <li><a href="#" title="">Dispensas Unidades</a></li>
+						
+						<li><a href="#" title="">Medicamentos</a></li>
+						<li><a href="#" title="">Dispensas Pacientes</a></li>
+						
+					</ul></li>
+			</ul>
+			</h:form>
 				</div>
 			</div>
 
 			<div id="content_right">
+
 				<h:form>
 
 					<fieldset>
-						<legend style="margin-left: 200px;">Cadastro de
+						<legend style="margin-left: 200px;">Atualizar Dados do
 							Medicamento</legend>
+							<div id="cads">
+						<h:panelGrid columns="2">
 
-						<div id="cads">
-
-							<h:panelGrid columns="2">
-
+							
 
 								<h:outputText value="#{msgs['cadastro.nome.medicamento']}"
 									styleClass="campo" />
@@ -118,7 +115,6 @@
 									id="apresentacao" required="true"
 									requiredMessage="#{msgs['cadastro.apresentacao.ausente']}"
 									style="width:205px;" size="1" styleClass="campo">
-
 									<f:selectItem itemValue="Selecione" />
 									<f:selectItem itemValue="Frasco" />
 									<f:selectItem itemValue="Ampola" />
@@ -220,27 +216,24 @@
 									required="true"
 									requiredMessage="#{msgs['cadastro.valorMedicamento.ausente']}"
 									style="width:202px;" styleClass="campo" />
+						</h:panelGrid>
 
-							</h:panelGrid>
+						<h:commandButton type="submit" value="Atualizar"
+							action="#{MedicamentoBean.atualizarMedicamento}"
+							styleClass="botoes" style="margin-left: 200px;" />
 
-							<h:commandButton type="submit" value="Cadastrar"
-								action="#{MedicamentoBean.inserirMedicamento}"
-								styleClass="botoes" style="margin-left: 200px;" />
-
-							<h:commandButton value="Cancelar" action="cancelar"
-								immediate="true" styleClass="botoes" />
-
+						<h:commandButton value="Cancelar" action="cancelar"
+							immediate="true" styleClass="botoes" />
 
 
-							<div id="footer">
-								<h:messages style="color:red;"></h:messages>
-							</div>
+						<div id="footer">
+							<h:messages style="color:red;"></h:messages>
 						</div>
-
-					</fieldset>
-
-				</h:form>
 			</div>
+			</fieldset>
+			</h:form>
+		</div>
+
 		</div>
 
 	</f:view>

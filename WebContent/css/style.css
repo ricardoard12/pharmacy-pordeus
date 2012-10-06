@@ -1,6 +1,6 @@
 body {
 	margin: 0px;
-	font-family: Verdana, Tahoma, Arial;
+	font-family: Arial;
 }
 
 ul {
@@ -18,18 +18,17 @@ ul#menu {
 ul#menu li {
 	color: #0E464E;
 	line-height: 19px;
-	
 }
 
 ul#menu li.header {
-	background: #DFDFDF;
+	background: white;
 	font-weight: 400;
 	padding: 0px 3px;
 	text-align: center;
 	font-size: 13pt;
 	font-family: 12pt Arial;
 	color: #0E464E;
-	
+	border-bottom: 1px #DFDFDF solid;
 }
 
 ul#menu li a {
@@ -67,9 +66,8 @@ ul#menu li ul.sub-menu li a {
 
 ul#menu li ul.sub-menu li a:HOVER {
 	padding-left: 15px;
-	color:white;
+	color: white;
 	border: 1px white solid;
-	
 }
 
 #top {
@@ -101,8 +99,6 @@ ul#menu li ul.sub-menu li a:HOVER {
 	margin-top: 5px;
 	margin-left: 1px;
 	border-right: 1px gray solid;
-	
-	
 }
 
 #content #content_left #menuUser {
@@ -110,7 +106,6 @@ ul#menu li ul.sub-menu li a:HOVER {
 	height: 585px;
 	margin: 0px;
 	border: 1px white solid;
-	
 }
 
 #content  #content_right {
@@ -135,9 +130,10 @@ ul#menu li ul.sub-menu li a:HOVER {
 	margin-bottom: 5px;
 }
 
-.texto{
+.texto {
 	color: #0E464E;
 	margin-left: 10px;
+	font-family: Arial;
 }
 
 #content  #content_right fieldset input.botoes {
@@ -157,6 +153,12 @@ a {
 	display: block;
 	font-size: 10pt;
 	color: #000;
+}
+
+.link {
+	display: block;
+	font-size: 10pt;
+	color: #0E464E;
 }
 
 label {
@@ -180,8 +182,58 @@ label {
 
 .linha1 {
 	background: #C9C9C9;
+	border: 1px #DFDFDF solid;
 }
 
 .linha2 {
 	background: white;
+	border: 1px #DFDFDF solid;
+}
+
+#footer {
+	width: 650px;
+	margin-top:20px;
+	padding-top:10px;
+	font-family:Arial;
+	font-size:12pt;
+	border-top: 1px #DFDFDF solid;
+}
+
+
+#criterio{
+	width: 240px;
+	float: left;
+	font-family:Arial;
+	font-size:10pt;
+	border-top: 1px #DFDFDF solid;
+	margin-top: 5px;
+	margin-bottom:10px;
+    border-bottom:1px #DFDFDF solid;
+    padding-top:11px;
+	padding-bottom: 10px;
+}
+
+#busca{
+width: 410px;
+	float: right;
+	font-family:Arial;
+	font-size:10pt;
+	border-top: 1px #DFDFDF solid;
+	margin-top: 5px;
+	margin-bottom: 7px;
+	border-bottom:1px #DFDFDF solid;
+	padding-top: 8px;
+	padding-bottom: 6px;
+}
+
+#cads{
+	width: 650px;
+	float: right;
+	font-family:Arial;
+	font-size:12pt;
+	color:#0E464E;
+	border-top: 1px #DFDFDF solid;
+	padding-top: 10px;
+}
+
 }

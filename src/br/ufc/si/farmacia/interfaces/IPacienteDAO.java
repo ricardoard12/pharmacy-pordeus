@@ -16,6 +16,6 @@ public interface IPacienteDAO {
 	
 	public List<Paciente> listaTodosPacientes();
 
-	public boolean pacientePorRg(Long long1);
+	public Paciente pacientePorRg(Paciente paciente);
 	
 }// fim da interface
