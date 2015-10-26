@@ -1,0 +1,1 @@
+O sistema irá permitir ao usuário fazer dispensações de medicamentos,receber lotes de medicamentos,controlar o estoque,visualizar relatórios,etc.
